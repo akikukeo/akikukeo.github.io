@@ -25,13 +25,19 @@
         font-weight: bold;
     }
 
-.sample {
+.text-center {
 	margin: 16px auto;
 	text-align: center;
 	display: block;
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 }
-.sample .text {
+.text-center .text {
 	text-align: left;
 	display: inline-block;
+}
+
+.bordered {
+    border: 2px solid #000;  /* 黒い2pxの枠 */
+    padding: 20px;            /* 内側の余白 */
+    margin: 10px;             /* 外側の余白 */
 }

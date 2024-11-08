@@ -4,56 +4,62 @@
 <body>
 <h1><p>minecraftserver wiki</p></h1>
 
-
-<!-- README取得する -->
-    <style>
-        .markdown-body {
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: left;  /* 左揃え */
-            display: inline-block;  /* 行内表示 */
-            margin-left: 20px;
-        }
-        .content-wrapper {
-            display: flex;   /* 横並び */
-            align-items: flex-start; /* 上揃え */
-            justify-content: flex-start;
-        }
-    </style>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GitHub README Viewer with Marked</title>
-        <!-- 外部CSSファイルの読み込み -->
-        <link rel="stylesheet" href="style.css">
-        <!-- markedライブラリ -->
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    </head>
-    <body>
-        <h2>GitHub README Viewer</h2>
-        <div id="readme-content" class="markdown-body"></div>
-
-        <script>
-            async function fetchAndDisplayReadme() {
-                const url = 'https://raw.githubusercontent.com/akikukeo/minecraft-server/refs/heads/main/docs/README.md';
-                try {
-                    const response = await fetch(url);
-                    if (response.ok) {
-                        const markdown = await response.text();
-                        const htmlContent = marked.parse(markdown);
-                        document.getElementById('readme-content').innerHTML = htmlContent;
-                    } else {
-                        console.error('Failed to fetch README:', response.status);
-                        document.getElementById('readme-content').innerText = "READMEの取得に失敗しました。";
+<div class="text-center">
+	<p class="text">
+        <div class="bordered">
+            <!-- README取得する -->
+                <style>
+                    .markdown-body {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        text-align: left;  /* 左揃え */
+                        display: inline-block;  /* 行内表示 */
+                        margin-left: 20px;
                     }
-                } catch (error) {
-                    console.error('Error fetching README:', error);
-                    document.getElementById('readme-content').innerText = "エラーが発生しました。";
-                }
-            }
-            fetchAndDisplayReadme();
-        </script>
-    
+                    .content-wrapper {
+                        display: flex;   /* 横並び */
+                        align-items: flex-start; /* 上揃え */
+                        justify-content: flex-start;
+                    }
+                </style>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>GitHub README Viewer with Marked</title>
+                    <!-- 外部CSSファイルの読み込み -->
+                    <link rel="stylesheet" href="style.css">
+                    <!-- markedライブラリ -->
+                    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                </head>
+                <body>
+                    <h2>GitHub README Viewer</h2>
+                    <div id="readme-content" class="markdown-body"></div>
+            
+                    <script>
+                        async function fetchAndDisplayReadme() {
+                            const url = 'https://raw.githubusercontent.com/akikukeo/minecraft-server/refs/heads/main/docs/README.md';
+                            try {
+                                const response = await fetch(url);
+                                if (response.ok) {
+                                    const markdown = await response.text();
+                                    const htmlContent = marked.parse(markdown);
+                                    document.getElementById('readme-content').innerHTML = htmlContent;
+                                } else {
+                                    console.error('Failed to fetch README:', response.status);
+                                    document.getElementById('readme-content').innerText = "READMEの取得に失敗しました。";
+                                }
+                            } catch (error) {
+                                console.error('Error fetching README:', error);
+                                document.getElementById('readme-content').innerText = "エラーが発生しました。";
+                            }
+                        }
+                        fetchAndDisplayReadme();
+                    </script>
+                </body>
+        </div>
+	</p>
+</div>
+
 
 <!-- 共有の奴 -->
     <head>
