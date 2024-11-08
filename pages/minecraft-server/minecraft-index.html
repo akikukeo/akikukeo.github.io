@@ -6,22 +6,7 @@
 
 <div class="text-center">
 	<p class="text">
-        <div class="bordered">
             <!-- README取得する -->
-                <style>
-                    .markdown-body {
-                        font-size: 16px;
-                        line-height: 1.6;
-                        text-align: left;  /* 左揃え */
-                        display: inline-block;  /* 行内表示 */
-                        margin-left: 20px;
-                    }
-                    .content-wrapper {
-                        display: flex;   /* 横並び */
-                        align-items: flex-start; /* 上揃え */
-                        justify-content: flex-start;
-                    }
-                </style>
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,8 +18,8 @@
                 </head>
                 <body>
                     <h2>GitHub README Viewer</h2>
+        <div class="bordered">
                     <div id="readme-content" class="markdown-body"></div>
-            
                     <script>
                         async function fetchAndDisplayReadme() {
                             const url = 'https://raw.githubusercontent.com/akikukeo/minecraft-server/refs/heads/main/docs/README.md';
