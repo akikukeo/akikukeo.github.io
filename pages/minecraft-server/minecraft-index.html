@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<script src="https://taisukef.github.io/marked_md/marked.min.js"></script>
+<html>
+<body>
+<h1><p>minecraftserver wiki</p></h1>
+
+ <!-- /* ページ全体に左右の余白を追加 */ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minecraft-index</title>
+    <style>
+        
+    body {
+        margin-left: 100px;  /* 左側に20pxの余白 */
+        margin-right: 100px; /* 右側に20pxの余白 */
+    }
+    </style>
+    </head>
+
+<div class="text-center">
+	<p class="text">
+            <!-- README取得する -->
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <!-- <title>GitHub README Viewer with Marked</title> -->
+                    <!-- 外部CSSファイルの読み込み -->
+                    <link rel="stylesheet" href="style.css">
+                    <!-- markedライブラリ -->
+                    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                </head>
+                <body>
+                    <h2>GitHub README Viewer</h2>
+        <div class="bordered">
+                    <div id="readme-content" class="markdown-body"></div>
+                    <script>
+                        async function fetchAndDisplayReadme() {
+                            const url = 'https://raw.githubusercontent.com/akikukeo/minecraft-server/refs/heads/main/docs/README.md';
+                            try {
+                                const response = await fetch(url);
+                                if (response.ok) {
+                                    const markdown = await response.text();
+                                    const htmlContent = marked.parse(markdown);
+                                    document.getElementById('readme-content').innerHTML = htmlContent;
+                                } else {
+                                    console.error('Failed to fetch README:', response.status);
+                                    document.getElementById('readme-content').innerText = "READMEの取得に失敗しました。";
+                                }
+                            } catch (error) {
+                                console.error('Error fetching README:', error);
+                                document.getElementById('readme-content').innerText = "エラーが発生しました。";
+                            }
+                        }
+                        fetchAndDisplayReadme();
+                    </script>
+                </body>
+        </div>
+	</p>
+</div>
+
+
+<!-- 共有の奴 -->
+    <head>
+        <!-- 追従するトップへ戻るボタンHTML -->
+            <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
+            <a href="#" id="page-top"><i class="blogicon-chevron-up"></i>TOP</a>
+        <!-- 追従するHOMEボタンHTML -->
+            <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
+            <a href="../../index.html" id="home-link"><i class="blogicon-home"></i>HOME</a> 
+        <!-- Copyright表記
+            <header>
+                <small>&copy;akikukeo</small>
+                <meta charset="UTF-8">
+                <title>Header Sample</title>
+                <link rel="stylesheet" href="style.css">
+            </header> -->
+    </head>
+
+</body> 
+</html>
