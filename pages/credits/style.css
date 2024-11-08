@@ -40,4 +40,9 @@
     border: 1px solid #000;  /* 黒い2pxの枠 */
     padding: 20px;            /* 内側の余白 */
     margin: 200px;             /* 外側の余白 */
+    background-color: #363636;
+}
+
+.backcolor {
+    background-color: #363636;
 }
