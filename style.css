@@ -84,3 +84,16 @@
     background: #111;
     color: #FFF;
 }
+
+/* text スタイル */
+.text {
+    color: #000;
+    font-size: 16px;
+    font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Osaka", "MS PGothic", "MS Pゴシック", sans-serif;
+    line-height: 0.8em;
+    letter-spacing: 0.02em;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-align: left;
+}
