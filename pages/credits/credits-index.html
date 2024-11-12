@@ -1,107 +1,69 @@
 <!DOCTYPE html>
-<script src="https://taisukef.github.io/marked_md/marked.min.js"></script>
-<html>
-<!-- 共有の奴 -->
-    <head>
-        <!-- 追従するトップへ戻るボタンHTML -->
-            <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
-            <a href="#" id="page-top"><i class="blogicon-chevron-up"></i>TOP</a>
-        <!-- 追従するHOMEボタンHTML -->
-            <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
-            <a href="../../index.html" id="home-link"><i class="blogicon-home"></i>HOME</a> 
-        <!-- Copyright表記 -->
-    <!-- /* ページ全体に左右の余白を追加 */ -->
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>credits</title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=100%, initial-scale=1.0">
-            <title>credits</title>
-            <link rel="stylesheet" href="../../CSS/style.css">
-            <div class="body-margin-LR">
-    </head>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits</title>
+    <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
 
-<div class="text-center">
-    <body>
-        <h1><p>Credits</p></h1>
-    </body>
-</div>
-<body>
-    <h2>以下のオープンソースソフトウェア／ライブラリ／ソースコードを使用しています。</h2>
-</body>
-    
-<body>
+<body class="body-margin-LR">
+    <!-- トップボタンとホームボタン -->
+    <a href="#" id="page-top"><i class="blogicon-chevron-up"></i>TOP</a>
+    <a href="../../index.html" id="home-link"><i class="blogicon-home"></i>HOME</a> 
+
+    <!-- ページタイトル -->
+    <div class="text-center">
+        <h1>Credits</h1>
+        <p>以下のオープンソースソフトウェア／ライブラリ／ソースコードを使用しています。</p>
+    </div>
+
+    <!-- marked_md ライブラリの情報 -->
     <h2><a href="https://github.com/taisukef/marked_md" target="_blank">marked_md</a></h2>
-    <div class="text-center">
-        <h2>GitHubDocumentViewer</h2>
+    <div class="bordered" id="readme-content">
+        <p>Loading...</p>
     </div>
-</body>
-<p class="text">
-    <!-- README取得する -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <title>GitHub README Viewer with Marked</title> -->
-        <!-- 外部CSSファイルの読み込み -->
-        <link rel="stylesheet" href="../../CSS/style.css">
-        <!-- markedライブラリ -->
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    </head>
-    <body>
-        <div class="bordered">
-            <div id="readme-content" class="markdown-body"></div>
-                <script>
-                    async function fetchAndDisplayReadme() {
-                        const url = 'https://raw.githubusercontent.com/taisukef/marked_md/refs/heads/master/LICENSE.md';
-                        try {
-                            const response = await fetch(url);
-                            if (response.ok) {
-                                const markdown = await response.text();
-                                const htmlContent = marked.parse(markdown);
-                                document.getElementById('readme-content').innerHTML = htmlContent;
-                            } else {
-                                console.error('Failed to fetch README:', response.status);
-                                document.getElementById('readme-content').innerText = "READMEの取得に失敗しました。";
-                            }
-                        } catch (error) {
-                            console.error('Error fetching README:', error);
-                            document.getElementById('readme-content').innerText = "エラーが発生しました。";
-                        }
-                    }
-                    fetchAndDisplayReadme();
-                </script>
-            </div>
-        </div>
-    </body>
-</p>
 
-<body>
+    <!-- github-markdown-css ライブラリの情報 -->
     <h2><a href="https://github.com/sindresorhus/github-markdown-css" target="_blank">github-markdown-css</a></h2>
-    <div class="text-center">
-        <h2>GitHubDocumentViewer</h2>
+    <div class="bordered" id="content">
+        <p>Loading...</p>
     </div>
-    <div class="bordered">
-        <div id="content">Loading...</div>
-            <script>
-                // GitHub rawデータのURLを指定
-                const url = 'https://raw.githubusercontent.com/sindresorhus/github-markdown-css/refs/heads/main/license';
-            
-                // データをfetchで取得
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok ' + response.statusText);
-                        }
-                        return response.text();
-                    })
-                    .then(data => {
-                        // 取得したデータをcontentのdivに挿入
-                        document.getElementById('content').textContent = data;
-                    })
-                    .catch(error => {
-                        console.error('Error fetching the file:', error);
-                        document.getElementById('content').textContent = "Failed to load content.";
-                    });
-            </script>
-</body> 
+
+    <!-- README取得スクリプト -->
+    <script>
+        async function fetchAndDisplayReadme(url, elementId) {
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const markdown = await response.text();
+                    const htmlContent = marked.parse(markdown);
+                    document.getElementById(elementId).innerHTML = htmlContent;
+                } else {
+                    console.error(`Failed to fetch ${elementId}:`, response.status);
+                    document.getElementById(elementId).innerText = "コンテンツの取得に失敗しました。";
+                }
+            } catch (error) {
+                console.error(`Error fetching ${elementId}:`, error);
+                document.getElementById(elementId).innerText = "エラーが発生しました。";
+            }
+        }
+
+        // marked_md READMEの表示
+        fetchAndDisplayReadme('https://raw.githubusercontent.com/taisukef/marked_md/refs/heads/master/LICENSE.md', 'readme-content');
+
+        // github-markdown-css ライセンスの表示
+        fetch('https://raw.githubusercontent.com/sindresorhus/github-markdown-css/refs/heads/main/license')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+                return response.text();
+            })
+            .then(data => document.getElementById('content').textContent = data)
+            .catch(error => {
+                console.error('Error fetching the file:', error);
+                document.getElementById('content').textContent = "Failed to load content.";
+            });
+    </script>
+</body>
 </html>
