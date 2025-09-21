@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Hero部分（画面の上半分） */
+.hero {
+  height: 50vh; /* 半分に */
+  background: linear-gradient(-45deg, #ff6b6b, #f5a623, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero .overlay {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* セクション（画面下半分以降） */
+.section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #222;
+  border-bottom: 2px solid #4facfe;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* カード */
+.cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #aaa;
+}
+
+/* アニメーション */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+.fade-in.delay {
+  animation-delay: 1s;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
