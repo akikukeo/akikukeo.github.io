@@ -125,7 +125,7 @@ footer {
 .timeline {
   position: relative;
   margin-top: 30px;
-  padding-left: 40px;
+  padding-left: 25px; /* 左の余白を調整 */
   border-left: 3px solid #4facfe;
 }
 
@@ -141,10 +141,11 @@ footer {
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -49.5px;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  /* left: -28px; 丸マーカーを右にずらす */
+  left: -22px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   background: #fff;
   border: 3px solid #4facfe;
@@ -209,7 +210,7 @@ footer {
 
 .timeline-full {
   /* JSでアニメーションさせるための準備 */
-  overflow: hidden;
+  overflow-y: hidden; /* 垂直方向のみはみ出しを隠す */
   transition: opacity 0.4s ease-out, height 0.4s ease-out;
   height: 0;
   opacity: 0;

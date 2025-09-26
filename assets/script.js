@@ -35,6 +35,8 @@ if (historyToggle && timelinePreview && timelineFull) {
       timelineFull.addEventListener('transitionend', () => {
         timelineFull.style.display = 'none';
         timelinePreview.style.display = 'block';
+        // グラフの再描画をトリガー
+        window.dispatchEvent(new Event('resize'));
       }, { once: true }); // イベントリスナーを一度だけ実行
 
       historySection.classList.remove('is-open');
@@ -50,6 +52,11 @@ if (historyToggle && timelinePreview && timelineFull) {
       // 高さと透明度を設定してアニメーションを開始
       timelineFull.style.height = fullHeight + 'px';
       timelineFull.style.opacity = '1';
+
+      // アニメーション終了後にグラフの再描画をトリガー
+      timelineFull.addEventListener('transitionend', () => {
+        window.dispatchEvent(new Event('resize'));
+      }, { once: true });
 
       historySection.classList.add('is-open');
     }
