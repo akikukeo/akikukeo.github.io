@@ -138,6 +138,7 @@ footer {
   margin-bottom: 0;
 }
 
+<<<<<<< Updated upstream
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -151,6 +152,8 @@ footer {
   z-index: 1;
 }
 
+=======
+>>>>>>> Stashed changes
 .timeline-year {
   font-weight: bold;
   font-size: 1.2em;
