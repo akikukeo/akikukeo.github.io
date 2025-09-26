@@ -39,7 +39,7 @@
       <div class="cards">
         <div class="card">
           <h3>Web Development</h3>
-          <p>HTML, CSS, JavaScriptを使ったWebサイト制作。モダンでスタイリッシュなデザインと使いやすさを重視しています。</p>
+          <p>HTML, CSS, JavaScriptを使ったWebサイト制作。モダンでスタイリッシュなデザインと使いやすさを目指しています。</p>
         </div>
         <div class="card">
           <h3>Server Management</h3>
@@ -52,50 +52,72 @@
       </div>
     </section>
 
-    <section id="history" class="section fade-in-up">
-      <h2>プログラミングの歩み</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">2020年</div>
-          <div class="timeline-content">
-            <p>初めてプログラミングに触れる（Scratch）</p>
+    <section id="history" class="section">
+      <h2 class="toggle-history">プログラミングの歩み</h2>
+
+      <!-- プレビュー用コンテンツ -->
+      <div class="timeline-preview">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2020年</div>
+            <div class="timeline-content">
+              <p>初めてプログラミングに触れる（Scratch）</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022年</div>
+            <div class="timeline-content">
+              <p>Windowsのバッチファイルを用いてソフトウェアを開発</p>
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2022年</div>
-          <div class="timeline-content">
-            <p>Windowsのバッチファイルを用いてソフトウェアを開発</p>
+      </div>
+
+      <!-- 完全版コンテンツ（初期非表示） -->
+      <div class="timeline-full" style="display: none;">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2020年</div>
+            <div class="timeline-content">
+              <p>初めてプログラミングに触れる（Scratch）</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2023年</div>
-          <div class="timeline-content">
-            <p>Web制作に触れる（HTML/CSS/JS）</p>
-            <p>Pythonに触れる</p>
+          <div class="timeline-item">
+            <div class="timeline-year">2022年</div>
+            <div class="timeline-content">
+              <p>Windowsのバッチファイルを用いてソフトウェアを開発</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2024年</div>
-          <div class="timeline-content">
-            <p>GitHubでの活動を開始</p>
-            <p>個人的なMinecraftのサーバーを制作</p>
-            <p>YukkuriMovieMakerで合成音声に興味を持つ</p>
+          <div class="timeline-item">
+            <div class="timeline-year">2023年</div>
+            <div class="timeline-content">
+              <p>Web制作に触れる（HTML/CSS/JS）</p>
+              <p>Pythonに触れる</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2025年</div>
-          <div class="timeline-content">
-            <p>～4月: Style-Birt-Vits2を用いた合成音声に興味を持つ（当時はPCのスペックが低く断念）</p>
-            <p>4月: PCの新調で、Style-Birt-Vits2を用いて音声合成モデルを制作</p>
-            <p>C#と.NETを活用したWindowsソフトウェア開発</p>
-            <p>VOICEVOXへ興味を持ち、開発に参加</p>
+          <div class="timeline-item">
+            <div class="timeline-year">2024年</div>
+            <div class="timeline-content">
+              <p>GitHubでの活動を開始</p>
+              <p>個人的なMinecraftのサーバーを制作</p>
+              <p>YukkuriMovieMakerで合成音声に興味を持つ</p>
+            </div>
           </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">現在</div>
-          <div class="timeline-content">
-            <p>Web開発・アプリ制作・AI関連の開発など幅広く挑戦</p>
-            <p>自然言語処理・音声合成分野でのスキルアップを目指す</p>
+          <div class="timeline-item">
+            <div class="timeline-year">2025年</div>
+            <div class="timeline-content">
+              <p>～4月: Style-Birt-Vits2を用いた合成音声に興味を持つ（当時はPCのスペックが低く断念）</p>
+              <p>4月: PCの新調で、Style-Birt-Vits2を用いて音声合成モデルを制作</p>
+              <p>C#と.NETを活用したWindowsソフトウェア開発</p>
+              <p>VOICEVOXへ興味を持ち、開発に参加</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">現在</div>
+            <div class="timeline-content">
+              <p>Web開発・アプリ制作・AI関連の開発など幅広く挑戦</p>
+              <p>自然言語処理・音声合成分野でのスキルアップを目指す</p>
+            </div>
           </div>
         </div>
       </div>
@@ -125,9 +147,8 @@
 
     <section id="contact" class="section fade-in-up">
       <h2>Contact</h2>
-      <p>
-        <a><a href="https://discord.com/users/968755981326639104">Discord</a>
-      </p>
+        <p><a href="https://discord.com/users/968755981326639104">Discord</a></p>
+        <p><a href="https://github.com/akikukeo">GitHub</a></p>
     </section>
   </main>
 
