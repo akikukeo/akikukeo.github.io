@@ -138,19 +138,6 @@ footer {
   margin-bottom: 0;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  /* left: -28px; 丸マーカーを右にずらす */
-  left: -22px;
-  top: 6px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid #4facfe;
-  z-index: 1;
-}
 
 .timeline-year {
   font-weight: bold;
